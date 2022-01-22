@@ -1,3 +1,5 @@
+import 'package:mobx_calismasi/core/init/navigation/navigation_service.dart';
+import 'package:mobx_calismasi/core/init/notifier/theme_notifier.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
@@ -13,8 +15,10 @@ class ApplicationProvider {
   List<SingleChildWidget> singleItems = [];
 
   List<SingleChildWidget> dependItems = [
-    //ProxyProvider(update: ),
-    //StreamProvider(create: create, initialData: initialData)
+    ChangeNotifierProvider(create: (context) => ThemeNotifier()),
+    Provider.value(
+      value: NavigationService.instance,
+    ),
   ];
 
   List<SingleChildWidget> uiChangesItems = [];

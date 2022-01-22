@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx_calismasi/core/base/state/base_state.dart';
 import 'package:mobx_calismasi/core/base/view/base_view.dart';
+import 'package:mobx_calismasi/core/constants/enums/locale_keys_enum.dart';
 import 'package:mobx_calismasi/core/extension/string_extension.dart';
+import 'package:mobx_calismasi/core/init/cache/locale_manager.dart';
 import 'package:mobx_calismasi/core/init/lang/language_manager.dart';
 import 'package:mobx_calismasi/core/init/lang/locale_keys.g.dart';
 import 'package:mobx_calismasi/features/authenticate/test/viewmodel/test_view_model.dart';
@@ -30,6 +32,9 @@ class _TestsViewState extends BaseState<TestsView> {
 
   Widget get scaffoldBody => Scaffold(
         appBar: AppBar(
+          leading: Text(
+              LocaleManager.instance.getStringValue(PreferencesKeys.TOKEN) ??
+                  ''),
           title: _textWelcomeWidget,
           actions: [_iconButtonTurn],
         ),
