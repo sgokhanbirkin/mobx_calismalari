@@ -2,6 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx_calismasi/core/constants/app/app_constant.dart';
 import 'package:mobx_calismasi/core/init/lang/language_manager.dart';
+import 'package:mobx_calismasi/core/init/notifier/provider_list.dart';
+import 'package:mobx_calismasi/core/init/notifier/theme_notifier.dart';
+import 'package:mobx_calismasi/features/authenticate/test/view/text_view.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(EasyLocalization(
       child: const MyApp(),
@@ -14,9 +18,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Material App',
-      home: Scaffold(),
+    return MultiProvider(
+      providers: [...ApplicationProvider.instance.dependItems],
+      child: MaterialApp(
+        theme: Provider.of<ThemeNotifier>(context, listen: false).currentTheme,
+        home: TestsView(),
+      ),
     );
   }
 }
