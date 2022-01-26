@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobx_calismasi/core/components/button/not_found_navigation_widget.dart';
-import 'package:mobx_calismasi/core/constants/navigation_constants.dart/NavigationConstants.dart';
+import 'package:mobx_calismasi/core/constants/navigation_constants/NavigationConstants.dart';
 import 'package:mobx_calismasi/features/authenticate/test/view/text_view.dart';
 
 class NavigationRoute {

@@ -23,5 +23,5 @@ class LocaleManager {
   }
 
   String? getStringValue(PreferencesKeys key) =>
-      _preferences.getString(key.toString()) ?? "";
+      _preferences.getString(key.toString());
 }

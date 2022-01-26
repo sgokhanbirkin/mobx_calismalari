@@ -10,7 +10,8 @@ import 'package:mobx_calismasi/core/init/notifier/theme_notifier.dart';
 import 'package:mobx_calismasi/features/authenticate/test/view/text_view.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   LocaleManager.preferencesInit();
 
   runApp(MultiProvider(

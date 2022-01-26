@@ -4,10 +4,9 @@ import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
 class ApplicationProvider {
-  static ApplicationProvider? _instance;
+  static final ApplicationProvider _instance = ApplicationProvider._init();
   static ApplicationProvider get instance {
-    _instance ??= ApplicationProvider._init();
-    return _instance!;
+    return _instance;
   }
 
   ApplicationProvider._init();
